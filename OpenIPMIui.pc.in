@@ -6,6 +6,6 @@ includedir=@includedir@
 Name: OpenIPMIui
 Description: UI front-end for OpenIPMI
 Version: @VERSION@
-Requires: OpenIPMI ncurses
+Requires: OpenIPMI
 Libs: -L${libdir} -lOpenIPMIutils -lOpenIPMIui -lOpenIPMI -lncurses
 Cflags: -I${includedir}

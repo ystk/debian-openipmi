@@ -6,6 +6,6 @@ includedir=@includedir@
 Name: OpenIPMIpthread
 Description: Pthread OS handler for OpenIPMI
 Version: @VERSION@
-Requires: OpenIPMI pthread
-Libs: -L${libdir} -lOpenIPMIutils -lOpenIPMIpthread
-Cflags: -I${includedir}
+Requires: OpenIPMI
+Libs: -L${libdir} -lOpenIPMIutils -lOpenIPMIpthread -pthread
+Cflags: -I${includedir} -pthread
