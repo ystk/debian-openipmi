@@ -21,6 +21,7 @@ else
 endif
 
 config.status: configure
+	cp /usr/share/misc/config.sub /usr/share/misc/config.guess .
 	dh_testdir
 	# Add here commands to configure the package.
 	CFLAGS="$(CFLAGS)" ./configure --host=$(DEB_HOST_GNU_TYPE) \
@@ -51,14 +52,7 @@ clean:
 	[ ! -f Makefile ] || $(MAKE) distclean
 	# generated file not removed by upstream Makefile
 	rm -f swig/python/openipmigui/Makefile
-
-ifneq "$(wildcard /usr/share/misc/config.sub)" ""
-	cp -f /usr/share/misc/config.sub config.sub
-endif
-ifneq "$(wildcard /usr/share/misc/config.guess)" ""
-	cp -f /usr/share/misc/config.guess config.guess
-endif
-
+	rm -f config.sub config.guess
 
 	dh_clean 
 
